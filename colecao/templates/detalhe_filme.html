@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+{% block conteudo %}
+<div class="cartao">
+    <h1>{{ item.titulo }}</h1>
+    <p><strong>Diretor:</strong> {{ item.diretor }}</p>
+    <p><strong>Ano:</strong> {{ item.ano }}</p>
+    <p><strong>Gênero:</strong> {{ item.genero }}</p>
+    {% if item.assistido %}
+        <p><span class="etiqueta">Já assisti ✓</span></p>
+    {% else %}
+        <p><span class="etiqueta nao">Ainda não assisti</span></p>
+    {% endif %}
+</div>
+
+<p>
+    <a class="botao botao-azul" href="/filmes/{{ item.id }}/editar/">Editar</a>
+    <a class="botao botao-vermelho" href="/filmes/{{ item.id }}/excluir/">Excluir</a>
+    <a class="botao botao-cinza" href="/filmes/">Voltar</a>
+</p>
+{% endblock %}

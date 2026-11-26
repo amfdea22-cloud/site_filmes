@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+{% block conteudo %}
+<h1>Excluir filme</h1>
+<div class="formulario">
+    <p>Tem certeza que quer excluir <strong>{{ item.titulo }}</strong>?</p>
+    <form method="post">
+        {% csrf_token %}
+        <button type="submit" class="botao botao-vermelho">Sim, excluir</button>
+        <a class="botao botao-cinza" href="/filmes/{{ item.id }}/">Cancelar</a>
+    </form>
+</div>
+{% endblock %}
