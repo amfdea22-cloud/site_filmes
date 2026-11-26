@@ -1,0 +1,26 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Minha Coleção</title>
+    <link rel="stylesheet" href="{% static 'css/estilo.css' %}">
+</head>
+<body>
+    <header class="topo">
+        <div class="marca">🎬 Minha Coleção</div>
+        <nav>
+            <a href="/">Início</a>
+            <a href="/filmes/">Meus Filmes</a>
+            <a href="/filmes/novo/">+ Novo filme</a>
+            <a href="/admin/">Admin</a>
+        </nav>
+    </header>
+    <main class="conteudo">
+        {% block conteudo %}
+        {% endblock %}
+    </main>
+    <footer class="rodape">Projeto Final · UC4 · Senac Pernambuco</footer>
+</body>
+</html>

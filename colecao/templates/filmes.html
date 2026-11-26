@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+{% block conteudo %}
+<h1>Meus Filmes</h1>
+<a class="botao" href="/filmes/novo/">+ Novo filme</a>
+
+<div class="grade">
+    {% for item in filmes %}
+    <div class="cartao">
+        <h2><a href="/filmes/{{ item.id }}/">{{ item.titulo }}</a></h2>
+        <p>{{ item.diretor }} · {{ item.ano }}</p>
+        <p>
+            <span class="etiqueta">{{ item.genero }}</span>
+            {% if item.assistido %}
+                <span class="etiqueta">Já assisti ✓</span>
+            {% else %}
+                <span class="etiqueta nao">Quero assistir</span>
+            {% endif %}
+        </p>
+    </div>
+    {% empty %}
+    <p>Nenhum filme cadastrado ainda.</p>
+    {% endfor %}
+</div>
+{% endblock %}

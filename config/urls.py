@@ -16,7 +16,15 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
+from paginas import views as paginas_views
+from colecao import views as colecao_views
 
 urlpatterns = [
-    path('admin/', admin.site.urls),
+    path("admin/", admin.site.urls),
+    path("", paginas_views.inicio),
+    path("filmes/", colecao_views.filmes),
+    path("filmes/novo/", colecao_views.novo_filme),
+    path("filmes/<int:id>/", colecao_views.detalhe_filme),
+    path("filmes/<int:id>/editar/", colecao_views.editar_filme),
+    path("filmes/<int:id>/excluir/", colecao_views.excluir_filme),
 ]
